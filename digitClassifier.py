@@ -34,14 +34,15 @@ plt.show()
 #The first layer is a Flatten layer, which converts the 2D image data into a 1D array. 
 #This is necessary because the following dense layers require 1D input.
 #Next is a fully connected (dense) layer with 128 neurons.
-#The activation='relu' argument specifies that the layer uses the ReLU (Rectified Linear Unit) activation function. #FIXME
+#The activation='relu' argument specifies that the layer uses the ReLU (Rectified Linear Unit) activation function.
+#The ReLU function is mathematically defined as f(x)=max⁡(0,x).This means that for any input x, the output is the maximum of 0 and x.
 #ReLU is a common activation function in neural networks, particularly useful for solving non-linear problems.
 #The next (dropout) layer sets a fraction (0.2 in this case) of input units to 0 at each update during training time.
 #This helps prevent overfitting.
 #Overfitting occurs when a model learns the training data too well, including the noise and outliers,
 #which then negatively affects its performance on new, unseen data.
 #The final layer is another dense layer with 10 neurons, one for each class (digit) in the MNIST dataset.
-#The softmax activation function is used for multi-class classification tasks. #FIXME
+#The softmax activation function is used for multi-class classification tasks.
 #It converts the outputs to probability-like values and allows one to choose the class
 #with the highest probability as the model's output prediction.
 
@@ -55,11 +56,11 @@ model = models.Sequential([
 #Compile the model
 #The optimizer is an algorithm or method used to change the attributes
 #of the neural network such as weights and learning rate in order to reduce the losses.
-#Adam is a popular optimization algorithm in deep learning because it combines #FIXME
-#the best properties of the AdaGrad and RMSProp algorithms to provide an optimization algorithm that can handle sparse gradients on noisy problems. #FIXME
+#Adam is a popular optimization algorithm in deep learning because it combines
+#the best properties of the AdaGrad and RMSProp algorithms to provide an optimization algorithm that can handle sparse gradients on noisy problems.
 #It's known for being robust and effective in a wide range of problems.
 #The loss function is a measure of how good a prediction model does in terms of being able to predict the expected outcome. 
-#In this case, sparse_categorical_crossentropy is used as the loss function for the model. #FIXME
+#In this case, sparse_categorical_crossentropy is used as the loss function for the model.
 #This is a common choice for classification problems where the labels are integers.
 #It differs from categorical_crossentropy in the way it handles labels:
 #sparse_categorical_crossentropy takes integer labels, while categorical_crossentropy expects one-hot encoded labels.
