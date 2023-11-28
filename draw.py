@@ -6,8 +6,8 @@ class DrawingApp:
         self.root = root
         root.title("Drawing Pad with Data Display")
 
-        self.canvas_width = 28
-        self.canvas_height = 28
+        self.canvas_width = 250
+        self.canvas_height = 250
 
         # Create a drawing canvas
         self.canvas = tk.Canvas(root, width=self.canvas_width, height=self.canvas_height, bg='white')
