@@ -36,7 +36,6 @@ plt.show()
 #Next is a fully connected (dense) layer with 128 neurons.
 #The activation='relu' argument specifies that the layer uses the ReLU (Rectified Linear Unit) activation function.
 #The ReLU function is mathematically defined as f(x)=max⁡(0,x).This means that for any input x, the output is the maximum of 0 and x.
-#ReLU is a common activation function in neural networks, particularly useful for solving non-linear problems.
 #The next (dropout) layer sets a fraction (0.2 in this case) of input units to 0 at each update during training time.
 #This helps prevent overfitting.
 #Overfitting occurs when a model learns the training data too well, including the noise and outliers,
@@ -74,7 +73,7 @@ model.compile(optimizer='adam',  												#Using Adam optimizer
 
 #Train the model
 #fit() is a method of the Sequential class in Keras that is used for training the model. It fits the model to the training data.
-#The epochs parameter specifies the number of times the learning algorithm will work through the entire training dataset. #FIXME
+#The epochs parameter specifies the number of times the learning algorithm will work through the entire training dataset.
 #One epoch means that each sample in the training dataset has had an opportunity to update the internal model parameters.
 #An epoch is comprised of one or more batches, depending on the size of the training dataset and the defined batch size.
 #In this case, setting epochs=5 means the entire dataset is passed forward and backward through the neural network five times.
@@ -82,8 +81,7 @@ model.compile(optimizer='adam',  												#Using Adam optimizer
 model.fit(train_images, train_labels, epochs=5)  								#Training the model for 5 epochs
 
 #Evaluate the model on the test set
-#.evaluate() computes the loss and any additional metrics (in this case, accuracy) on the provided test dataset
-#It's important to use a separate dataset (not used during training) for evaluation to ensure that the assessment of the model's performance is accurate and unbiased.
+#evaluate() computes the loss and accuracy on the provided test dataset
 
 test_loss, test_acc = model.evaluate(test_images, test_labels)					#Evaluating the model on test data
 print(f"Test accuracy: {test_acc}")												#Printing the test accuracy
